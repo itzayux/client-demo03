@@ -1,0 +1,166 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Playfair Display", "Georgia", "serif";
+  --font-sans: "Poppins", "system-ui", "sans-serif";
+
+  --color-wood-warm: #7B5E3B;
+  --color-cream: #F8F4EC;
+  --color-beige: #E7D8C9;
+  --color-sand: #D9C7B0;
+  --color-wood-dark: #4A3426;
+  --color-wood-light: #B89774;
+  --color-espresso: #271910;
+  --color-gold: #D4AF37;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--color-cream);
+    color: var(--color-wood-dark);
+    overflow-x: hidden;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-serif);
+  }
+}
+
+/* --- IMMERSIVE UI PREMIUM CLASSES --- */
+
+/* Wood Grain Subtle Spotlight Texture */
+.wood-grain-bg {
+  background-color: #F8F4EC;
+  background-image: 
+    radial-gradient(circle at 50% 30%, rgba(123, 94, 59, 0.05) 0%, transparent 70%),
+    radial-gradient(rgba(123, 94, 59, 0.02) 1.5px, transparent 0),
+    radial-gradient(rgba(123, 94, 59, 0.02) 1.5px, transparent 0);
+  background-size: 100% 100%, 24px 24px, 24px 24px;
+  background-position: center, 0 0, 12px 12px;
+}
+
+/* Luxurious Dark Velvet Wood Backdrop */
+.velvet-wood-dark {
+  background: radial-gradient(circle at top, #4A3426 0%, #271910 100%);
+  position: relative;
+}
+.velvet-wood-dark::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(212, 175, 55, 0.03) 1px, transparent 0);
+  background-size: 20px 20px;
+  pointer-events: none;
+}
+
+/* Premium Framed Artwork double border style */
+.frame-double {
+  border: 1px solid rgba(123, 94, 59, 0.2);
+  padding: 8px;
+  position: relative;
+}
+.frame-double::after {
+  content: '';
+  position: absolute;
+  inset: 4px;
+  border: 1px solid rgba(123, 94, 59, 0.1);
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+.frame-double-gold {
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  padding: 8px;
+  position: relative;
+}
+.frame-double-gold::after {
+  content: '';
+  position: absolute;
+  inset: 4px;
+  border: 1px dashed rgba(212, 175, 55, 0.15);
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+/* Ambient Radial Wood Glow */
+.ambient-glow-warm {
+  box-shadow: 0 0 50px -10px rgba(123, 94, 59, 0.12);
+}
+
+.ambient-glow-dark {
+  box-shadow: 0 20px 40px -15px rgba(39, 25, 16, 0.4);
+}
+
+.ambient-glow-gold {
+  box-shadow: 0 10px 30px -10px rgba(212, 175, 55, 0.15);
+}
+
+/* Glassmorphism Navigation */
+.glass-nav {
+  background-color: rgba(248, 244, 236, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(123, 94, 59, 0.12);
+}
+
+.glass-nav-dark {
+  background-color: rgba(39, 25, 16, 0.82);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+}
+
+/* Dark Glassmorphic Card */
+.glass-card-dark {
+  background: rgba(39, 25, 16, 0.65);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(212, 175, 55, 0.12);
+}
+
+/* Light Sophisticated Card */
+.premium-card-light {
+  background: #FFFDF9;
+  border: 1px solid rgba(231, 216, 201, 0.85);
+  box-shadow: 0 4px 20px -5px rgba(123, 94, 59, 0.05);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F8F4EC;
+}
+::-webkit-scrollbar-thumb {
+  background: #7B5E3B;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #4A3426;
+}
+
+/* Soft entry animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Text spotlight gradient effect */
+.text-gold-gradient {
+  background: linear-gradient(135deg, #F8F4EC 0%, #D9C7B0 50%, #B89774 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
